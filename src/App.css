@@ -1,38 +1,98 @@
 .App {
   text-align: center;
+  /* display: flex;
+ justify-content: center;
+  align-items: center; */
+  color: black;
+
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+@media screen  and (max-width:476px){
+  .search-bar .input{
+  width: 70%;
+ 
 }
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.search-items{
+  height: 100px;
+  overflow-y: scroll;
 }
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.main-page{
   display: flex;
   flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
 
-.App-link {
-  color: #61dafb;
 }
+.main-page .main-page-box{
+ display: none;
+ background-color: white;
+}
+.main-page-box .main-page-img{
+   display: none;
+   
+}
+.main-page-box2 .main-page-img2{
+ width: 15vh;
+  height: 43vw;
+}
+.main-page .main-page-box2{
+  display: flex;
+  flex-direction: column;
+  background-color: white;
+}
+.main-page-box2 .font-box{
+  font-size: 0.7rem;
+}
+.main-page .main-page-box2 .button-shopnow{
+ height: 9vw;
+ width: 9vh;
+ font-size: 0.7rem;
+}
+.box-footer{
+  display: flex;
+  flex-direction: column;
+}
+}
+@media screen  and (max-width:900px){
+  .search-bar .input{
+  width: 50%;
+ 
+}
+.search-items{
+  height: 130px;
+  overflow-y: scroll;
+}
+.main-page{
+  display: flex;
+  flex-direction: column;
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+}
+.main-page .main-page-box{
+ display: none;
+ background-color: white;
+}
+.main-page-box .main-page-img{
+   display: none;
+   
+}
+.main-page-box2 .main-page-img2{
+ width: 38vh;
+  height: 55vw;
+}
+.main-page .main-page-box2{
+  display: flex;
+  flex-direction: column;
+  background-color: white;
+}
+.main-page-box2 .font-box{
+  font-size: 1.3rem;
+}
+.main-page .main-page-box2 .button-shopnow{
+ height: 7vw;
+ width: 12vh;
+ font-size: 0.9rem;
+}
+.box-footer{
+  font-size: 1rem;
+  display: flex;
+  flex-direction: column;
+}
 }
