@@ -1,30 +1,11 @@
 
   .nav-container-inside{
-    background-color: rgba(77, 222, 248, 0.185);
-    /* display: flex; */
-    font-size: 1.2rem;
+
+    font-size: 1.3rem;
     align-items: center;
     justify-content: center;
   }
-.nav-container-inside ul{
-    list-style: none;
-}
-.link{
-    padding: 4vh;
-    margin-left: 3vh;
-}
 
-input{
-  height: 30px;
-  border-radius: 5px;
-  padding: 15px;
-  width: 450px;
-}
-@media screen  and (max-width:459px){
-  .nav-container-inside{
-    width: 100%;
-    display: flex;
-    font-size: 0.7rem;
-    
-  }
-}
+
+
+

@@ -1,0 +1,19 @@
+.img-main{
+    animation: changeBg 7s infinite ;
+    width: 100%;
+    background-size: contain;
+
+}
+@keyframes changeBg{
+    0%{
+        background-image: url('https://img.freepik.com/free-photo/emotional-lady-with-short-curle-hair-funny-dancing-sunglasses-fur-coat_197531-7115.jpg?size=626&ext=jpg&ga=GA1.1.1178283486.1682423436&semt=robertav1_2_sidrs');
+    }
+    30%  {background-image: url("https://img.freepik.com/free-photo/young-woman-beautiful-red-dress_1303-17500.jpg?w=740&t=st=1683102316~exp=1683102916~hmac=27c9d80fd374d72002213656296e59e76476a81638b13fea237016c41064f658");}
+   
+    
+    80%{
+        background-image: url('https://img.freepik.com/premium-photo/girl-with-long-curly-hair-pink-dress_136403-2305.jpg?size=626&ext=jpg&ga=GA1.1.1178283486.1682423436&semt=robertav1_2_sidr');
+    }
+ 
+    
+ }

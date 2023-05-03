@@ -1,0 +1,65 @@
+ [
+    {
+     "id": 1,
+     "title": "Denim",
+     "description": "Men Blue Solid Denim Jacket",
+     "price": "$650",
+     "img": "https://img.freepik.com/free-photo/portrait-handsome-smiling-stylish-young-man_158538-19393.jpg?size=626&ext=jpg&ga=GA1.2.1178283486.1682423436&semt=robertav1_2_sidr"
+    },
+    {
+     "id": 2,
+     "title": "Dress",
+     "description": "One Piece",
+     "price": "$250",
+     "img": "https://img.freepik.com/free-photo/young-woman-with-shopping-bags-beautiful-dress_1303-17550.jpg?size=626&ext=jpg&ga=GA1.1.1178283486.1682423436&semt=robertav1_2_sidr"
+    },
+    {
+     "id": 3,
+     "title": "Coat",
+     "description": "New in Town",
+     "price": "$900",
+     "img": "https://img.freepik.com/free-photo/excited-white-girl-bright-stylish-glasses-posing-pink-dreamy-curly-woman-playing-with-her-ginger-hair-laughing_197531-11045.jpg?size=626&ext=jpg&ga=GA1.1.1178283486.1682423436&semt=robertav1_2_sidr"
+    },
+    {
+     "id": 4,
+     "title": "Shirt",
+     "description": "Men Pink Slim Fit Casual Shirt",
+     "price": "$123",
+     "img": "https://img.freepik.com/free-photo/portrait-handsome-smiling-stylish-young-man-model-wearing-jeans-clothes-sunglasses-fashion-man_158538-5015.jpg?size=626&ext=jpg&ga=GA1.1.1178283486.1682423436&semt=robertav1_2_sidr"
+    },
+    {
+     "id": 5,
+     "title": "Checks",
+     "description": "Red and Black",
+     "price": "$250",
+     "img": "https://img.freepik.com/free-photo/portrait-handsome-smiling-stylish-young-man-model-dressed-red-checkered-shirt-fashion-man-posing_158538-4916.jpg?size=626&ext=jpg&ga=GA1.1.1178283486.1682423436&semt=robertav1_2_sidr"
+    },
+    {
+     "id": 6,
+     "title": "Jump Suit",
+     "description": "Jumbo Bell bottom",
+     "price": "$670",
+     "img": "https://img.freepik.com/premium-photo/young-beautiful-girl-with-long-curly-hair-summer-dress-posing-pastel-orange_97875-670.jpg?size=626&ext=jpg&ga=GA1.1.1178283486.1682423436&semt=robertav1_2_sidr"
+    },
+    {
+     "id": 7,
+     "title": "T-Shirt",
+     "description": "Red Floral Ethnic A-Line Cotton Midi Ethnic Dress",
+     "price": "$555",
+     "img": "https://img.freepik.com/free-photo/fashionable-woman-red-coat-black-hat-posing_273443-2430.jpg?size=626&ext=jpg&ga=GA1.2.1178283486.1682423436&semt=robertav1_2_sidr"
+    },
+    {
+     "id": 8,
+     "title": " Wrap Dresss",
+     "description": "Red & Beige Floral Waist Cut-Out Maxi Dress",
+     "price": "$9050",
+     "img": "https://img.freepik.com/premium-photo/girl-with-long-curly-hair-pink-dress_136403-2305.jpg?size=626&ext=jpg&ga=GA1.2.1178283486.1682423436&semt=robertav1_2_sidr"
+    },
+    {
+     "id": 9,
+     "title": "Dress",
+     "description": "Lavender Solid Accordion Pleats Wrap Dress",
+     "price": "$230",
+     "img": "https://img.freepik.com/free-photo/emotional-lady-with-short-curle-hair-funny-dancing-sunglasses-fur-coat_197531-7115.jpg?size=626&ext=jpg&ga=GA1.1.1178283486.1682423436&semt=robertav1_2_sidr"
+    }
+   ]
