@@ -1,14 +1,10 @@
-import React, { useContext, useEffect } from 'react'
+import React, { useContext } from 'react'
 import { Card, Image,Stack,Heading,Button, CardBody, CardFooter, Box ,Text} from '@chakra-ui/react'
-import { ListItemContext } from '../context/ListItemContext'
-
-
+import { ListItemContext } from '../../context/ListItemContext'
 
 
 const WishList = () => {
- 
-const {wishList}=useContext(ListItemContext)
-
+   const {wishList}=useContext(ListItemContext);
 
   return (
     <div>

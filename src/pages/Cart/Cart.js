@@ -1,5 +1,7 @@
-import React from 'react'
-import Nav from '../components/Nav/Nav';
+import React, { useReducer } from 'react'
+import Nav from '../../components/Nav/Nav';
+import data from '../../data/data.json'
+import reducer from '../../reducer/reducer';
 import { Box,Table, 
   Thead,
   Tbody,
@@ -12,11 +14,18 @@ import {ArrowBackIcon,AddIcon,MinusIcon} from '@chakra-ui/icons'
 import { useNavigate } from 'react-router-dom';
 
 
-
 const Cart = () => {
+  const {id,title,price}=data;
   const backToHome=useNavigate();
 const handlehomePage=()=>{
   backToHome('/home');
+}
+
+
+
+
+const handleDeleteItem=(id)=>{
+ 
 }
 
   return (
@@ -93,7 +102,7 @@ const handlehomePage=()=>{
          
         </Td>
         <Td>
-          <Button variant='ghost'>
+          <Button variant='ghost' onClick={()=>handleDeleteItem(id)}>
             <MdOutlineDeleteOutline  color='red' />
           </Button>
           </Td>

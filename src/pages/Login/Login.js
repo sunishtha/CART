@@ -1,7 +1,7 @@
 import React , { useState} from 'react';
 import {VStack,FormControl, FormLabel, Input, InputGroup,  Button,Box, Heading} from '@chakra-ui/react'
-import { LoginContext } from '../context/LoginContext';
-import Home from './Home';
+import { LoginContext } from '../../context/LoginContext';
+import Home from '../Home/Home';
 
 const Login = () => {
 
@@ -18,7 +18,7 @@ const handleSubmit=()=>{
 
 
   return (
-  <LoginContext.Provider value={{email}}>
+    <LoginContext.Provider  value={{email}}>
     {
      
       profile ? 
