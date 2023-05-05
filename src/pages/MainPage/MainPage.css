@@ -17,3 +17,15 @@
  
     
  }
+ @media (max-width:530px)  {
+    .main-page-item{
+        display: flex;
+        flex-direction: column;
+        padding: 0;
+        width: 100%;
+    }
+  .inside-main-page .inside-main-page-heading{
+       color: black;
+      
+    }
+ }

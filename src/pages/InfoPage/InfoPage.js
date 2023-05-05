@@ -1,6 +1,7 @@
 import React from "react";
 import {Box,Card,CardBody,Stack,Heading,Text,Divider, CardFooter, Image} from '@chakra-ui/react'
 import {BsStarFill,BsStarHalf} from 'react-icons/bs'
+import './InfoPage.css'
 
 export default function InfoPage(){
     return (
@@ -12,9 +13,10 @@ export default function InfoPage(){
                 </Box>
                 <Divider/>
                 {/* reviews */}
-                <Box m={5} gap={'30px'} display={'flex'} alignItems={'center'} justifyContent={'center'} >
+                <Box className="info-page"
+                  m={5} gap={'30px'} display={'flex'} alignItems={'center'} justifyContent={'center'} >
 
-                <Card  width={'25%'} >
+                <Card className="info-card" width={'25%'} >
   <CardBody textAlign={'start'}>
    
     <Stack  spacing='3'>
@@ -38,7 +40,7 @@ export default function InfoPage(){
   <Divider />
  
 </Card>
-<Card  width={'25%'}  maxW='sm'>
+<Card className="info-card" width={'25%'}  maxW='sm'>
   <CardBody textAlign={'start'}>
    
     <Stack  spacing='3'>
@@ -64,7 +66,7 @@ export default function InfoPage(){
   <Divider />
  
 </Card>
-<Card width={'25%'} maxW='sm'>
+<Card className="info-card" width={'25%'} maxW='sm'>
   <CardBody textAlign={'start'}>
    
     <Stack  spacing='3'>
@@ -72,7 +74,7 @@ export default function InfoPage(){
         width={'70px'} src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQM6o5TXh5hlJVR1XehxKx3xnukVfPpsm9LwaxI2xknILIL-NOnuztcnzW9BM5hJ4WIdDM&usqp=CAU"/>
       <Heading size='md'>Sophie Turner</Heading>
       <Text fontSize={'0.9rem'}>
-      The best! Found me the perfect dress and such lovely service and attention. 
+      Found me the perfect dress and such lovely service and attention. 
       </Text>
       <CardFooter>
         <Box gap={2} display={'flex'}>

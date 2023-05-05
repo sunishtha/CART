@@ -15,7 +15,7 @@ const MainPage = () => {
   return (
     <div>
 
-      <Box display='flex'
+      <Box className='main-page-item' display='flex'
         alignItems='center'
         justifyContent='center'>
         <Box
@@ -31,9 +31,9 @@ const MainPage = () => {
           bgImage={'https://img.freepik.com/free-photo/emotional-lady-with-short-curle-hair-funny-dancing-sunglasses-fur-coat_197531-7115.jpg?size=626&ext=jpg&ga=GA1.1.1178283486.1682423436&semt=robertav1_2_sidrs'}
 
           className='img-main' height={'72vh'} >
-          <Box flexDirection={'column'} display={'flex'} justifyContent={'start'}>
+          <Box className='inside-main-page' flexDirection={'column'} display={'flex'} justifyContent={'start'}>
 
-            <Heading p={3} ml={'70px'} color={'white'}>
+            <Heading className='inside-main-page-heading' p={3} ml={'70px'} color={'white'}>
               Huge  Collection
             </Heading>
 
