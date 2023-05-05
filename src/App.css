@@ -1,98 +1,12 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300&display=swap');
 .App {
   text-align: center;
   /* display: flex;
  justify-content: center;
   align-items: center; */
+  font-family: 'Montserrat', sans-serif;
   color: black;
 
 }
 
-@media screen  and (max-width:476px){
-  .search-bar .input{
-  width: 70%;
- 
-}
-.search-items{
-  height: 100px;
-  overflow-y: scroll;
-}
-.main-page{
-  display: flex;
-  flex-direction: column;
 
-}
-.main-page .main-page-box{
- display: none;
- background-color: white;
-}
-.main-page-box .main-page-img{
-   display: none;
-   
-}
-.main-page-box2 .main-page-img2{
- width: 15vh;
-  height: 43vw;
-}
-.main-page .main-page-box2{
-  display: flex;
-  flex-direction: column;
-  background-color: white;
-}
-.main-page-box2 .font-box{
-  font-size: 0.7rem;
-}
-.main-page .main-page-box2 .button-shopnow{
- height: 9vw;
- width: 9vh;
- font-size: 0.7rem;
-}
-.box-footer{
-  display: flex;
-  flex-direction: column;
-}
-}
-@media screen  and (max-width:900px){
-  .search-bar .input{
-  width: 50%;
- 
-}
-.search-items{
-  height: 130px;
-  overflow-y: scroll;
-}
-.main-page{
-  display: flex;
-  flex-direction: column;
-
-}
-.main-page .main-page-box{
- display: none;
- background-color: white;
-}
-.main-page-box .main-page-img{
-   display: none;
-   
-}
-.main-page-box2 .main-page-img2{
- width: 38vh;
-  height: 55vw;
-}
-.main-page .main-page-box2{
-  display: flex;
-  flex-direction: column;
-  background-color: white;
-}
-.main-page-box2 .font-box{
-  font-size: 1.3rem;
-}
-.main-page .main-page-box2 .button-shopnow{
- height: 7vw;
- width: 12vh;
- font-size: 0.9rem;
-}
-.box-footer{
-  font-size: 1rem;
-  display: flex;
-  flex-direction: column;
-}
-}

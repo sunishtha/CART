@@ -4,23 +4,27 @@ import './index.css';
 import App from './App';
 import { ChakraProvider } from '@chakra-ui/react'
 import { BrowserRouter } from 'react-router-dom'
-// import { ListItemProvider } from './pages/ListItems/ListItems';
+import { ListItemProvider } from './context/ListItemContext';
+import {CartContextProvider} from './context/CartContecxt'
 
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-    {/* <ListItemProvider > */}
+   <ListItemProvider>
+    <CartContextProvider>
       <BrowserRouter>
         <ChakraProvider>
+ 
           <App />
+             
         </ChakraProvider>
       </BrowserRouter>
+</CartContextProvider>
+</ListItemProvider>
 
-    {/* </ListItemProvider> */}
 
-
-  </React.StrictMode>
+   </React.StrictMode>
 );
 
 

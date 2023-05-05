@@ -2,11 +2,11 @@ import React, { useContext, useState, useEffect } from 'react'
 import { NavLink } from 'react-router-dom'
 import './Nav.css'
 import {
-    Box, Input, Text, Tab, TabList, Tabs, Image
+    Box, Input, Text, Tab, TabList, Tabs, Image, Button
 } from '@chakra-ui/react'
 import { LoginContext } from '../../context/LoginContext'
 import { AiOutlineShoppingCart, AiOutlineHeart } from 'react-icons/ai'
-
+import {CartContext} from '../../context/CartContecxt'
 
 
 export default function Nav() {
@@ -14,6 +14,8 @@ export default function Nav() {
     const [hours, setHours] = useState(0);
     const [minutes, setMinutes] = useState(0);
     const [seconds, setSeconds] = useState(0);
+    
+  const { cartData } = useContext(CartContext)
 
     const getTime = () => {
         const deadLine = " september,19,2023"
@@ -49,8 +51,8 @@ export default function Nav() {
                             <Tab width={'17%'}>
 
                                 <Box color={'white'}
-                                    borderRadius={'5px'} p={2} gap={5} display={'flex'} justifyContent={'center'} alignItems={'center'} width={'100%'} bgColor={'orange'}>
-                                    <Text >0{hours}</Text>
+                                    borderRadius={'5px'} p={2} gap={4} display={'flex'} justifyContent={'center'} alignItems={'center'} width={'100%'} bgColor={'orange'}>
+                                    <Text >{hours}</Text>
                                     <Text>:</Text>
                                     <Text> {minutes}</Text>
                                     <Text>:</Text>
@@ -71,13 +73,17 @@ export default function Nav() {
                             </Tab>
                             <Tab>
                                 <NavLink end to='/cart' className="link" >
-                                    <AiOutlineShoppingCart />
+                                    <Button colorScheme='green'>
+                                        <AiOutlineShoppingCart />
+                                   <Text p={2} color={'orange'} fontSize={'1rem'} >{cartData.length}</Text>
+                                    </Button>
+                                    
                                 </NavLink>
                             </Tab>
 
                             <Tab>
                                 <NavLink end to='/wishlist' className="link" >
-                                    <AiOutlineHeart color='red' />
+                                    <AiOutlineHeart className='link' color='red' />
                                 </NavLink>
                             </Tab>
                             <Tab width={'30%'}>

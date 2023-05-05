@@ -1,132 +1,139 @@
-import React, { useReducer } from 'react'
+import React, { useReducer, useContext, useState, useEffect } from 'react'
 import Nav from '../../components/Nav/Nav';
-import data from '../../data/data.json'
 import reducer from '../../reducer/reducer';
-import { Box,Table, 
+import {
+  Box, Table,
   Thead,
   Tbody,
   Tr,
   Th,
   Td,
-  TableContainer,Heading,Grid,GridItem,Button,Text} from '@chakra-ui/react'
-  import {MdOutlineDeleteOutline} from 'react-icons/md'
-import {ArrowBackIcon,AddIcon,MinusIcon} from '@chakra-ui/icons'
-import { useNavigate } from 'react-router-dom';
+  TableContainer, Heading, Button, Text, Image, Stack, Alert, AlertIcon
+} from '@chakra-ui/react'
+import { CartContext } from '../../context/CartContecxt'
+import { DeleteIcon } from '@chakra-ui/icons'
+import './Cart.css'
 
 
 const Cart = () => {
-  const {id,title,price}=data;
-  const backToHome=useNavigate();
-const handlehomePage=()=>{
-  backToHome('/home');
-}
+
+  const [order, setOrder] = useState(false);
+  const [total, setTotal] = useState()
+  const placeOrder = () => {
+    setOrder(true)
+  }
+
+  const { cartData, setCartData } = useContext(CartContext)
+
+  useEffect(() => {
+    setTotal(cartData.reduce((acc, curr) => {
+      return acc + Number(curr.price)
+    }, 0))
+  }, [total])
 
 
 
+  const deleteItem = (id) => {
+    setCartData(cartData.filter((ele) => ele.id !== id))
+  }
 
-const handleDeleteItem=(id)=>{
- 
-}
+  const [state, dispatch] = useReducer(reducer, { initialState: [] });
+  const incrHandle = (id) => {
+    return dispatch({
+      type: "INCR",
+      payload: id
+    });
+  };
 
   return (
-    <div>
-    <Nav/>
-   
-    <Grid templateColumns='repeat(5, 1fr)' gap={'2vh'}>
-  <GridItem colSpan={2} >
-  <Button onClick={handlehomePage}
-  colorScheme='teal' variant='ghost'>
-     <ArrowBackIcon alignItems={'start'} boxSize={5}  />
-  </Button>
+    <div className='cart'>
+      <Nav />
+      <Box className='cart-list' alignItems={'center'} justifyContent={'center'} display={'flex'} flexDirection={'column'}>
 
-  </GridItem>
-  
-</Grid>
-     
-    <Box  alignItems={'center'} justifyContent={'center'} display={'flex'}>
-    <Heading as='h3' size='lg'>
-    CART ITEMS
-  </Heading>
-    </Box>
-  
-  <br/><br/>
- 
-    <Box fontSize={'1.0rem'}
-    display={'flex'} alignItems={'center' } justifyContent={'center'}>
-     
-    <Box overflowY={'scroll'}  h={'22vw'}
-    width={'60%'} p={20} border={' 2px solid rgba(77, 222, 248, 0.185)'}>
-    <TableContainer >
-  <Table variant='striped' colorScheme='white'>
-    
-    <Thead>
-      <Tr>
-        <Th></Th>
-        <Th>
-          <Heading as='h3' size='md'>
-     ITEM
-  </Heading>
-         </Th>
-         <Th>
-          <Heading as='h3' size='md'>
-     PRICE
-  </Heading>
-         </Th>
-         <Th>
-          <Heading as='h3' size='md'>
-     QUANTITY
-  </Heading>
-         </Th>
-         <Th>
-          <Heading as='h3' size='md'>
-    REMOVE
-  </Heading>
-         </Th>
-       
-      
-      </Tr>
-    </Thead>
-    <Tbody>
-      <Tr>
-        <Td>img</Td>
-        <Td>Jeans</Td>
-        <Td>$12</Td>
-        <Td>
-        <Button colorScheme='blue' variant='ghost'>
-            <AddIcon boxSize={3} />
-        </Button>
-          1
-          <Button colorScheme='blue' variant='ghost'>
-             <MinusIcon boxSize={3}/>
-        </Button>
-         
-        </Td>
-        <Td>
-          <Button variant='ghost' onClick={()=>handleDeleteItem(id)}>
-            <MdOutlineDeleteOutline  color='red' />
-          </Button>
-          </Td>
-   
-      </Tr>
-      
-    </Tbody>
-    
-  </Table>
-</TableContainer>
-    </Box>
-    </Box>
-<br/>
+        <Box alignItems={'center'} justifyContent={'center'} display={'flex'}>
+          <Heading color={'pink'} as='h3' size='lg'>
+            CART ITEMS
+          </Heading>
+        </Box>
+        {/*  */}
 
-    <Box 
-    gap={5} alignItems={'center'} justifyContent={'center'} display={'flex'}>
-      <Heading color={'pink.500'} as='h4' size='md'>
-        CART TOTAL :
-      </Heading>
-      <Text >
-        $1234
-      </Text>
-    </Box>
-    </div>
+        <Box  
+         height={'250px'}
+          width={'55%'} display={'flex'} flexDirection={'column'} justifyContent={'center'} alignItems={'center'}>
+          <TableContainer 
+          overflowY={'auto'}
+          css={{ '&::webkit-scrollbar': { width: "3px" }, '&::webkit-scrollbar-track': { width: '2px' }, '&::webkit-scrollbar-thumb': { background: 'pink', borderRadius: '10px' } }}
+          className='cart-table'>
+            <Table variant='simple'>
+
+              <Thead>
+                <Tr>
+                  <Th></Th>
+                  <Th fontSize={'1.1rem'}>Item</Th>
+                  <Th></Th>
+                  <Th fontSize={'1.1rem'}>Price</Th>
+                  <Th></Th>
+
+                </Tr>
+              </Thead>
+              {
+                cartData.map((cartItem, id) => {
+                  return (
+                    <>
+                      <Tbody key={id}>
+                        <Tr >
+                          <Td>
+                            <Image height={'50px'} width={'50px'} src={cartItem.img} alt='..' /></Td>
+                          <Td>{cartItem.title}</Td>
+                          <Td>
+                            <Box display={'flex'} justifyContent={'center'} alignItems={'center'}>
+                              <Button m={3} >-</Button>
+                              <Text>{cartItem.quantity}</Text>
+                              <Button 
+                              onClick={() => incrHandle(id)}
+                               m={3}>+</Button>
+                            </Box>
+                          </Td>
+                          <Td>${cartItem.price}</Td>
+                          <Td onClick={() => deleteItem(cartItem.id)}
+                            color={'red'}><DeleteIcon /></Td>
+
+                        </Tr>
+
+                      </Tbody>
+                    </>
+                  )
+                })
+              }
+
+            </Table>
+          </TableContainer>
+
+
+
+        </Box>
+        {/* total */}
+        <Box width={'40%'} p={2} m={2} display={'flex'} justifyContent={'center'} alignItems={'center'}>
+          <Heading textDecoration={'underline'} as='h4' size='sm' mr={3}>Total Amount :</Heading>
+          <Text color={'green'}>${total}</Text>
+        </Box>
+        {/* place order */}
+        {
+          order ? <Stack display={'flex'} p={4} spacing={3}>
+            <Alert status='success'>
+              <AlertIcon />
+              <Text>  Order is Placed Successfully!!</Text>
+
+
+            </Alert>
+          </Stack>
+            :
+            <Box onClick={placeOrder} width={'40%'} m={4}>
+              <Button width={'100%'} variant='solid' colorScheme='red'>Place Order</Button>
+            </Box>
+
+        }
+      </Box>   </div>
   )
 }
 

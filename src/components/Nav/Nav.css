@@ -5,7 +5,11 @@
     align-items: center;
     justify-content: center;
   }
-
+.link:hover{
+  color: blue;
+  cursor: pointer;
+  text-decoration: underline;
+}
 
 
 

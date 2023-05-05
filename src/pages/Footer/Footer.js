@@ -3,7 +3,7 @@ import { Box,Text } from '@chakra-ui/react'
 import { AiOutlineFacebook,AiOutlineMail } from 'react-icons/ai';
 import { BsInstagram } from 'react-icons/bs';
 import { FiTwitter } from 'react-icons/fi';
-import '../../App.css'
+import './Footer.css'
 
 const Footer = () => {
   return (
