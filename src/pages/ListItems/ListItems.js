@@ -20,7 +20,7 @@ const {wishListData,setWishListData}=useContext(ListItemContext);
 const {cartData,setCartData}=useContext(CartContext)
 
   async function getProduct() {
-   const res=await axios.get('https://641d9d2a945125fff3d19460.mockapi.io/api/cart-api')
+   const res=await axios.get('https://fakestoreapi.com/products')
 
   setList(res.data);
   
@@ -40,7 +40,7 @@ const {cartData,setCartData}=useContext(CartContext)
 
   const addToCartHandle=(listItem)=>{
     setCartData((data)=>
-    [...data,listItem]
+    [...data,{...listItem,quantity:1,totalPrice:Number(listItem?.price)}]
   )
   console.log(listItem)
   cartPage('/cart')
@@ -67,9 +67,9 @@ const {cartData,setCartData}=useContext(CartContext)
             className='list-item-box' p={9} key={listItem.id} 
             bgColor={'rgba(77, 222, 248, 0.185)'}  >
              
-              <Image src={listItem.img} />
+              <Image src={listItem.image} />
               <Text fontSize='2xl'>{listItem.title}</Text>
-              <Text fontSize='md'>{listItem.description}</Text>
+              {/* <Text fontSize='md'>{listItem.description}</Text> */}
               <Text color={'blue'} fontSize='xl'>${listItem.price}</Text>
               <Box p={5}
                display={'flex'} alignItems={'center'}
