@@ -1,6 +1,6 @@
-import React, { useReducer, useContext, useState, useEffect } from 'react'
+import React, {  useContext, useState, useEffect } from 'react'
 import Nav from '../../components/Nav/Nav';
-import reducer from '../../reducer/reducer';
+
 import {
   Box, Table,
   Thead,
@@ -16,34 +16,39 @@ import './Cart.css'
 
 
 const Cart = () => {
-
+  const { cartData, setCartData } = useContext(CartContext)
   const [order, setOrder] = useState(false);
   const [total, setTotal] = useState()
   const placeOrder = () => {
     setOrder(true)
   }
 
-  const { cartData, setCartData } = useContext(CartContext)
+
 
   useEffect(() => {
     setTotal(cartData.reduce((acc, curr) => {
       return acc + Number(curr.price)
     }, 0))
-  }, [total])
+  }, [])
 
+  const incrQuantityData=(cartItem)=>{
+   setCartData(cartData=>{
+    return cartData.map((data)=> data.id === cartItem.id ? {...cartItem,quantity:cartItem?.quantity+1,totalPrice:cartItem?.totalPrice+cartItem?.price}  :{...cartItem,totalPrice:cartItem?.price})
+   })
+ 
+  }
 
+  const decrQuantityData=(cartItem)=>{
+    setCartData(cartData=>{
+      return cartData.map((data)=> data.id === cartItem.id ? {...cartItem,quantity:cartItem?.quantity-1,totalPrice:cartItem?.totalPrice-cartItem?.price}  :{...cartItem,totalPrice:cartItem?.price})
+    })
+   }
 
   const deleteItem = (id) => {
     setCartData(cartData.filter((ele) => ele.id !== id))
   }
 
-  const [state, dispatch] = useReducer(reducer, { initialState: [] });
-  const incrHandle = (id) => {
-    return dispatch({
-      type: "INCR",
-      payload: id
-    });
-  };
+
 
   return (
     <div className='cart'>
@@ -83,18 +88,21 @@ const Cart = () => {
                       <Tbody key={id}>
                         <Tr >
                           <Td>
-                            <Image height={'50px'} width={'50px'} src={cartItem.img} alt='..' /></Td>
+                            <Image height={'50px'} width={'50px'} src={cartItem.image} alt='..' /></Td>
                           <Td>{cartItem.title}</Td>
                           <Td>
                             <Box display={'flex'} justifyContent={'center'} alignItems={'center'}>
-                              <Button m={3} >-</Button>
+                              <Button 
+                              onClick={()=>decrQuantityData(cartItem)}
+                               m={3} >-</Button>
                               <Text>{cartItem.quantity}</Text>
                               <Button 
-                              onClick={() => incrHandle(id)}
+                              onClick={()=>incrQuantityData(cartItem)}
                                m={3}>+</Button>
                             </Box>
+
                           </Td>
-                          <Td>${cartItem.price}</Td>
+                          <Td>${cartItem.totalPrice}</Td>
                           <Td onClick={() => deleteItem(cartItem.id)}
                             color={'red'}><DeleteIcon /></Td>
 
