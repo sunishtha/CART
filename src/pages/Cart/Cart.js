@@ -31,22 +31,28 @@ const Cart = () => {
     }, 0))
   }, [])
 
-  const incrQuantityData=(cartItem)=>{
-   setCartData(cartData=>{
-    return cartData.map((data)=> data.id === cartItem.id ? {...cartItem,quantity:cartItem?.quantity+1,totalPrice:cartItem?.totalPrice+cartItem?.price}  :{...cartItem,totalPrice:cartItem?.price})
+  const incrQuantityData=(cartItem,id)=>{
+  
+      setCartData(cartData=>{
+    return cartData.map((data,id)=> data.id === cartItem.id ? {...cartItem,quantity:cartItem?.quantity+1,totalPrice:cartItem?.totalPrice+cartItem?.price}  :{...cartItem,totalPrice:cartItem?.price})
    })
+   
+   
  
   }
 
-  const decrQuantityData=(cartItem)=>{
-    setCartData(cartData=>{
+  const decrQuantityData=(cartItem,id)=>{
+    
+       setCartData(cartData=>{
       return cartData.map((data)=> data.id === cartItem.id ? {...cartItem,quantity:cartItem?.quantity-1,totalPrice:cartItem?.totalPrice-cartItem?.price}  :{...cartItem,totalPrice:cartItem?.price})
     })
+    
    }
 
   const deleteItem = (id) => {
     setCartData(cartData.filter((ele) => ele.id !== id))
   }
+
 
 
 
@@ -64,7 +70,7 @@ const Cart = () => {
 
         <Box  
          height={'250px'}
-          width={'55%'} display={'flex'} flexDirection={'column'} justifyContent={'center'} alignItems={'center'}>
+          width={'75%'} display={'flex'} flexDirection={'column'} justifyContent={'center'} alignItems={'center'}>
           <TableContainer 
           overflowY={'auto'}
           css={{ '&::webkit-scrollbar': { width: "3px" }, '&::webkit-scrollbar-track': { width: '2px' }, '&::webkit-scrollbar-thumb': { background: 'pink', borderRadius: '10px' } }}
@@ -93,11 +99,11 @@ const Cart = () => {
                           <Td>
                             <Box display={'flex'} justifyContent={'center'} alignItems={'center'}>
                               <Button 
-                              onClick={()=>decrQuantityData(cartItem)}
+                              onClick={()=>decrQuantityData(cartItem,id)}
                                m={3} >-</Button>
                               <Text>{cartItem.quantity}</Text>
                               <Button 
-                              onClick={()=>incrQuantityData(cartItem)}
+                              onClick={()=>incrQuantityData(cartItem,id)}
                                m={3}>+</Button>
                             </Box>
 
