@@ -1,9 +1,0 @@
-@media (max-width:530px) {
-   .info-page{
-    display: flex;
-    flex-direction: column;
-   }
-   .info-card{
-    width: 100%;
-   }
-}
