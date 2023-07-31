@@ -1,0 +1,42 @@
+.category-container{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    width: 100%;
+   
+    height: 60vh;
+}
+.category-one{
+    background-image: url(https://img.freepik.com/premium-photo/beautiful-young-woman-blouse-with-naked-shoulders-fashionable-sunglasses-holding-stylish-shoes-hand-posing-pink-background-isolated-copy-space-right-advertising_179135-511.jpg?w=740);
+    height: 40vh;
+    width: 40%;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    font-size: 1.3rem;
+}
+.category-two{
+    background-image: url(https://img.freepik.com/free-photo/young-handsome-man-choosing-clothes-shop_1303-19720.jpg?t=st=1687000427~exp=1687001027~hmac=aaa2f2c45c68d0784bda7874976aa57a13629b96523fe36adb19734e25ce458e);
+    height: 40vh;
+    width: 40%;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    font-size: 1.3rem;
+}
+
+.category-one:hover, .category-two:hover{
+    visibility: visible;
+    opacity: 0.9;
+    cursor: pointer;
+    font-size: 1.5rem;
+    color: black;
+}

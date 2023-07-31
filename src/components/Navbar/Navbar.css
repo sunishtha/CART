@@ -1,0 +1,31 @@
+.navbar-container{
+    height: 11vh;
+    width: 100%;
+    background-color: 	#ff8c00;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 4px;
+    cursor: pointer;
+}
+.nav-img img{
+    height: 40px;
+    width: 40px;
+    border-radius: 30px;
+    padding: 5px;
+}
+
+.nav-content{
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    width: 30%;
+ 
+}
+.nav-icons{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    
+    width: 50%;
+}

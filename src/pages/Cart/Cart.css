@@ -1,8 +1,0 @@
-@media (max-width:530px) {
-    .cart-list{
-      height: 300px;
-       display: flex;
-       flex-direction: column;
-    }
-   
-}
